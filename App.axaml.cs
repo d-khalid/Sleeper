@@ -24,16 +24,7 @@ public partial class App : Application
             // More info: https://docs.avaloniaui.net/docs/guides/development-guides/data-validation#manage-validationplugins
             DisableAvaloniaDataAnnotationValidation();
            
-            var hiddenWindow = new Window
-            {
-                Width = 1,
-                Height = 1,
-                WindowState = WindowState.Minimized,
-                ShowInTaskbar = false
-            };
-            desktop.MainWindow = hiddenWindow;
-            hiddenWindow.Show(); // Required for dialogs to work
-            
+          
             desktop.ShutdownMode = ShutdownMode.OnExplicitShutdown;
             DataContext = new ApplicationViewModel();
         }

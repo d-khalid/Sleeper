@@ -12,8 +12,13 @@
     </Application.DataTemplates>
   
     <Application.Styles>
-        <FluentTheme />
+       <!-- <Style Selector="MenuItem">
+        <Setter Property="Background" Value="#FF0000"></Setter>
+
+       </Style> -->
+        <SimpleTheme />
     </Application.Styles>
+
              
     <TrayIcon.Icons>
         <TrayIcons>

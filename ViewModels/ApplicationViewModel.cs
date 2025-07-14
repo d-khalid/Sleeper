@@ -17,7 +17,7 @@ namespace Sleeper.ViewModels;
 public partial class ApplicationViewModel : ViewModelBase
 {
     // Wait 0.5s before running a command
-    public static int actionDelayMs = 500;
+    public static int actionDelayMs = 1000;
 
     [RelayCommand]
     public void MonitorOff()
@@ -27,7 +27,7 @@ public partial class ApplicationViewModel : ViewModelBase
             if (EnvironmentInfo.OS == OSPlatform.Windows)
             {
                 Thread.Sleep(actionDelayMs);
-                Process.Start("scrnsaver.scr", "/s");
+                Process.Start("nircmd.exe", "monitor off");
             }
             else if (EnvironmentInfo.OS == OSPlatform.Linux &&
                      EnvironmentInfo.LinuxDesktopEnvironment == DesktopEnvironment.KDE &&
@@ -58,7 +58,7 @@ public partial class ApplicationViewModel : ViewModelBase
             if (EnvironmentInfo.OS == OSPlatform.Windows)
             {
                 Thread.Sleep(actionDelayMs);
-                Process.Start("rundll32.exe", "powrprof.dll,SetSuspendState 0,1,0");
+                Process.Start("nircmd.exe", "standby");
             }
             else if (EnvironmentInfo.OS == OSPlatform.Linux && 
                      EnvironmentInfo.LinuxDesktopEnvironment == DesktopEnvironment.KDE &&
