@@ -1,6 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using System.IO;
 
 namespace Sleeper.Models;
 
@@ -65,24 +66,7 @@ public static class EnvironmentInfo
     
     public static bool CheckSystemd()
     {
-        try
-        {
-        
-            var psi = new ProcessStartInfo
-            {
-                FileName = "ls",
-                Arguments = "-l /usr/lib | grep systemd",
-                RedirectStandardOutput = true,
-                CreateNoWindow = false
-            };
-            using var process = Process.Start(psi);
-            // If there is an output, that means systemd is present
-            return !string.IsNullOrEmpty(process?.StandardOutput.ReadToEnd());
-        }
-        catch(Exception e)
-        {
-            return false; 
-        }
+        return Directory.Exists("/run/systemd/system");
     }
 
     private static DesktopEnvironment? GetLinuxDesktopEnvironment()

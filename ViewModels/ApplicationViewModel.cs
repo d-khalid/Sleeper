@@ -61,7 +61,7 @@ public partial class ApplicationViewModel : ViewModelBase
                 Process.Start("rundll32.exe", "powrprof.dll,SetSuspendState 0,1,0");
             }
             else if (EnvironmentInfo.OS == OSPlatform.Linux && 
-                     EnvironmentInfo.LinuxDesktopEnvironment == DesktopEnvironment.Gnome &&
+                     EnvironmentInfo.LinuxDesktopEnvironment == DesktopEnvironment.KDE &&
                      EnvironmentInfo.LinuxWindowingSystem == WindowingSystem.Wayland && 
                      EnvironmentInfo.IsSystemd)
             {
