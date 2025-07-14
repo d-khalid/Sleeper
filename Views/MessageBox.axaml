@@ -1,0 +1,25 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Sleeper.Views.MessageBox"
+        Title="Sleeper — Error"
+        Width="300"
+        SizeToContent="Height"
+        WindowStartupLocation="CenterScreen"
+        CanResize="False"
+        Icon="/Assets/moon.png"
+       >
+    
+    <StackPanel Margin="10">
+        <TextBlock x:Name="MessageText" 
+                   Text="PLACEHOLDER"
+                   TextWrapping="Wrap"
+                   Margin="0,10"
+                   HorizontalAlignment="Stretch"/>
+        
+        <Button Content="OK" 
+                HorizontalAlignment="Center"
+                Margin="0,10,0,5"
+                MinWidth="80"
+                Click="OnOkClicked"/>
+    </StackPanel>
+</Window>
